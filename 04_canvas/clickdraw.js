@@ -1,4 +1,4 @@
-//Yifan Wang (Team DropTheBall)
+//Yifan Wang and David Xiedeng (Team Drop the Ball)
 //SoftDev2 pd1
 //K#04 - I See a Red Door...
 //2020-02-05
