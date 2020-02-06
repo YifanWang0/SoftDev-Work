@@ -12,10 +12,10 @@ var clearCanvas = function(e) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 };
 
-var changeRect = function(e) {
+var changeBox = function(e) {
   console.log(e);
   var displayedState = document.getElementById("mode");
-  displayedState.innerHTML = "Rectangle";
+  displayedState.innerHTML = "Box";
   mode = 0;
 };
 
@@ -33,7 +33,7 @@ var draw = function(e) {
   let y = e.clientY - rect.top;
   if (mode == 0){
     ctx.fillStyle = "red";
-    ctx.fillRect (x, y, 30, 50);
+    ctx.fillRect (x, y, 30, 30);
   }
   if (mode == 1) {
     ctx.fillStyle = "blue";
@@ -46,8 +46,8 @@ var draw = function(e) {
 var clearButton = document.getElementById("clear");
 clearButton.addEventListener('click', clearCanvas);
 
-var rect = document.getElementById("rectangle");
-rect.addEventListener('click', changeRect);
+var box = document.getElementById("box");
+box.addEventListener('click', changeBox);
 
 var dot = document.getElementById("dot");
 dot.addEventListener('click', changeDot);
