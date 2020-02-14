@@ -1,3 +1,8 @@
+// Yifan Wang and Emily Zheng (Team Vision Donors)
+// SoftDev pd1
+// K08 -- What is it saving the screen from?
+// 2020-02-12
+
 var c = document.getElementById("slate");
 var ctx = c.getContext("2d");
 var radius = 0;
