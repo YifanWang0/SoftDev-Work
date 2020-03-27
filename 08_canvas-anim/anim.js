@@ -17,8 +17,8 @@ var logo = new Image();
 logo.src = "logo.png";
 var xSlope = 1;
 var ySlope = 1;
-var x = Math.floor(Math.random() * 550);
-var y = Math.floor(Math.random() * 550);
+var x = Math.floor(Math.random() * 500);
+var y = Math.floor(Math.random() * 500);
 
 document.getElementById("start").addEventListener("click", function () {
   console.log();
@@ -69,7 +69,7 @@ function circle(e) {
 
 function movie(e) {
   ctx.clearRect(0, 0, c.width, c.height);
-    if (x >= 480 || x <= 0){
+    if (x >= 500 || x <= 0){
       xSlope = -xSlope;
     }
     if (y >= 500 || y <= 0){
