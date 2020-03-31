@@ -39,16 +39,18 @@ var moveCircles = function(){
     var c = pic.children[i];
     var cx = parseInt(c.getAttribute("cx"));
     var cy = parseInt(c.getAttribute("cy"));
+    console.log(cx);
+    console.log(cy);
     if (cx >= 480) {
       c.setAttribute("xslope", -1);
     }
     else if (cx <= 20) {
       c.setAttribute("xslope", 1);
     }
-    if (cy <=20 480) {
+    if (cy >= 480) {
       c.setAttribute("yslope", -1);
     }
-    else if (cy >= 480) {
+    else if (cy <= 20) {
       c.setAttribute("yslope", 1);
     }
     var xslope = parseInt(parseInt(c.getAttribute("xslope")));
@@ -61,6 +63,16 @@ var moveCircles = function(){
   }
 };
 
+var colors = ['silver', 'gray', 'black', 'red', 'maroon', 'yellow', 'olive', 'lime', 'green', 'aqua', 'teal', 'blue', 'navy', 'fuchsia', 'purple'];
+
+var changeColor = function() {
+  for(i = 0; i < pic.children.length; i++){
+    var c = pic.children[i];
+    var index = Math.floor(Math.random() * colors.length);
+    c.setAttribute("fill", colors[index]);
+  }
+}
+
 pic.addEventListener('click', createCircle);
 
 movebtn.addEventListener("click", function() {
@@ -68,5 +80,7 @@ movebtn.addEventListener("click", function() {
   id = 0;
   id = window.requestAnimationFrame(moveCircles);
 });
+
+xtrabtn.addEventListener('click', changeColor);
 
 clearbtn.addEventListener('click', clear);
