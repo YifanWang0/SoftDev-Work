@@ -1,14 +1,8 @@
 <!DOCTYPE html>
-<!--D3 demo: hardcoded bars removed, to be generated fr data-->
 <!--
-    Can yield a horizontal bar chart if properly bound to data
-    (steelblue bars, white number overlays)
-    ...but will yield only blank page at first.
-  -->
-<!--
-Yifan Wang and Amanda Zheng (Team Icky Toothpaste)
+Yifan Wang, Amanda Zheng, and Tiffany Cao (Team Icky Toothpaste)
 SoftDev pd1
-K17
+K17: Deeper Into D3
 2020-04-06
 -->
 
@@ -29,23 +23,19 @@ K17
 <script src="http://d3js.org/d3.v5.min.js"
 	charset="utf-8"></script>
 
-<!--------------------------------
-    Entering the following commands via console will
-    incrementally re-create your hardcoded chart...
+  <!-- Entering the following command via console will perform an animation
+       to your circle...
 
     //Init your data:
-    var data = [4, 8, 15, 16, 23, 42];
+    var data = [100];
 
     //Select your chart.
-    var chart = d3.select(".chart");
-
-    //Prepare for data join.
-    var bar = chart.selectAll("div");
+    var circle = d3.select("circle");
 
     (this defines selection to which you will join data)
 
     //Join your data.
-    var barUpdate = bar.data(data);
+    var circleData = circle.data(data);
 
     //Instantiate new elements by appending to the “enter selection.”
     var barEnter = barUpdate.enter().append("div");
@@ -56,7 +46,7 @@ K17
 
     //Label each bar.
     barEnter.text(function(d) { return d; });
-  -------------------------------->
+  -->
 
 <!--
 Notes:
@@ -67,5 +57,4 @@ Notes:
   - barEnter.style("width", function(d) {return d * 10 + "px"; }) d is similar to e in js
   - .style() updates <style media="screen">
   - .text() updates text content
-  </style>
 -->
