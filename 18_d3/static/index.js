@@ -76,7 +76,7 @@ var show = function(){
 }
 
 var next = function(){
-  count = (count+1) % 79;
+  count = (count+1) % 78;
   data[0].cases=canada[count];
   data[1].cases=china[count];
   data[2].cases=france[count];
@@ -90,6 +90,7 @@ var next = function(){
 
   var date = document.getElementById("date");
   var dateOfMonth;
+  console.log(count)
   if (count < 29) {
     dateOfMonth = count + 1;
     date.innerHTML = "Date: February " + dateOfMonth.toString() + ", 2020";
@@ -116,7 +117,6 @@ var next = function(){
         .duration(1000)
         .tween( 'text', function(d) {
           var currentValue = this.textContent || "0";
-          console.log(this.textContent)
           var interpolator = d3.interpolateRound( currentValue, d.cases);
           return function( t ) {
             this.textContent = interpolator( t );
